@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.juan.tplabv.RegisterActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registro de Usuario"
+        android:layout_gravity="center"
+        android:textSize="20dp"/>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Esta es la pantalla de registro."
+        android:layout_marginTop="20dp"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Porfavor ingrese datos verdaderos."
+        android:textSize="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:layout_weight="0.19">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:id="@+id/etxtNomb"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="John"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:layout_weight="0.19">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apellido"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:id="@+id/etxtApe"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="Doe"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:layout_weight="0.19">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DNI"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:id="@+id/etxtUsu"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="DNI/CUIL"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:layout_weight="0.19">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mail"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:id="@+id/etxtMail"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="Email"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:layout_weight="0.19">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usuario"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:id="@+id/etxtPass"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="Ingrese usuario aqui"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:layout_weight="0.19">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reingrese"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:id="@+id/etxtRPass"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="Reingrese la Clave"
+            android:textSize="14dp" />
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Registrarme"/>
+
+</LinearLayout>
