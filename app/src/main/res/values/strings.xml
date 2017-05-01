@@ -1,11 +1,15 @@
 <resources>
     <string name="app_name">Buffet-UTN</string>
-    <string name="mail">Mail</string>
-    <string name="clave">Clave</string>
-    <string name="ingresar">Ingresar</string>
-    <string name="registrarme">Registrarme</string>
-    <string name="titRegistro">Registro de Usuario</string>
-    <string name="titWelcome">Bienvenido a la primer aplicación</string>
-    <string name="buffet">Buffet-UTN</string>
-
-</resources>
+    <string name="email">Email</string>
+    <string name="password">password</string>
+    <string name="login">Login</string>
+    <string name="signup">Sign up</string>
+    <string name="emailHint">enter email here</string>
+    <string name="passwordHint">enter password here</string>
+    <string name="signupTitle">Log in to continue</string>
+    <string name="welcomeTitle">Welcome to the first app by</string>
+    <string name="or">OR</string>
+    <string name="mainImgDesc">Buffet-UTN\'s logo</string>
+    <string name="rememberme">Save \n info</string>
+    <string name="emptyFormError">Empty field!</string>
+    </resources>

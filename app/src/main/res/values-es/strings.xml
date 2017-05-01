@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <resources>
+        <string name="app_name">Buffet-UTN</string>
+        <string name="email">Mail</string>
+        <string name="password">Clave</string>
+        <string name="login">Ingresar</string>
+        <string name="signup">Registrarme</string>
+        <string name="signupTitle">Registro de Usuario</string>
+        <string name="welcomeTitle">Bienvenido a la primer aplicación</string>
+        <string name="emailHint">ingrese email aqui</string>
+        <string name="passwordHint">ingrese contraseña aqui</string>
+        <string name="or">O</string>
+    <string name="mainImgDesc">Logo de Buffet-UTN</string>
+    </resources>
+

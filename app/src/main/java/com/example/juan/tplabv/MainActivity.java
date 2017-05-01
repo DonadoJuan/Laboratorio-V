@@ -1,10 +1,7 @@
 package com.example.juan.tplabv;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,13 +9,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //MainModel mm = new MainModel();
 
-        Button yourButton = (Button) findViewById(R.id.btnRegistrarse);
-
-        yourButton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, RegisterActivity.class));
-            }
-        });
+        MainView mv = new MainView(this);
+        MainController mc = new MainController(mv);
     }
 }
