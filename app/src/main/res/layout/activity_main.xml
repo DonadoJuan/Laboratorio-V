@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.juan.tplabv.MainActivity"
+    tools:context="com.example.juan.tplabv.mainActivity.MainActivity"
     android:background="#ffeeda"
     android:weightSum="1">
 
@@ -31,7 +31,7 @@
         android:textSize="17sp"/>
 
     <ImageView
-        android:id="@+id/mainImgView"
+        android:id="@+id/main_img_view"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:contentDescription="@string/mainImgDesc"
@@ -54,7 +54,7 @@
             android:textSize="18sp"/>
 
         <EditText
-            android:id="@+id/etxtEmail"
+            android:id="@+id/main_etxt_email"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -77,7 +77,7 @@
             android:textSize="18sp"/>
 
         <EditText
-            android:id="@+id/etxtPassword"
+            android:id="@+id/main_etxt_password"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -94,13 +94,13 @@
         android:layout_gravity="center">
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/main_btn_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/login"/>
 
         <android.support.v7.widget.AppCompatCheckBox
-            android:id="@+id/cboxRememberMe"
+            android:id="@+id/main_cbox_remind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/rememberme"/>
@@ -115,7 +115,7 @@
         android:textStyle="bold"/>
 
     <Button
-        android:id="@+id/btnSignup"
+        android:id="@+id/main_btn_signup"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

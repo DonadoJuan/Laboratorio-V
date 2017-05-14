@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.juan.tplabv.RegisterActivity">
+    tools:context="com.example.juan.tplabv.signupActivity.SignupActivity"
+    android:background="#fde6ff">
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registro de Usuario"
+        android:text="@string/signupTitle2"
         android:layout_gravity="center"
         android:textSize="20dp"/>
     
@@ -19,16 +20,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Esta es la pantalla de registro."
+        android:text="@string/signupSecTitle"
         android:layout_marginTop="20dp"
-        android:textSize="15dp"/>
+        android:textSize="15sp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Porfavor ingrese datos verdaderos."
-        android:textSize="15dp"/>
+        android:text="@string/sigunupThTitle"
+        android:textSize="15sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,16 +41,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nombre"
-            android:textSize="18dp"/>
+            android:text="@string/name"
+            android:textSize="18sp"/>
 
         <EditText
-            android:id="@+id/etxtNomb"
+            android:id="@+id/signup_etxt_name"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="John"
-            android:textSize="14dp" />
+            android:hint="@string/nameHint"
+            android:textSize="14sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -62,16 +63,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Apellido"
-            android:textSize="18dp"/>
+            android:text="@string/lastName"
+            android:textSize="18sp"/>
 
         <EditText
-            android:id="@+id/etxtApe"
+            android:id="@+id/signup_etxt_Lastname"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Doe"
-            android:textSize="14dp" />
+            android:hint="@string/lastNameHint"
+            android:textSize="14sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -84,16 +85,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DNI"
-            android:textSize="18dp"/>
+            android:text="@string/DNI"
+            android:textSize="18sp"/>
 
         <EditText
-            android:id="@+id/etxtUsu"
+            android:id="@+id/signup_etxt_dni"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="DNI/CUIL"
-            android:textSize="14dp" />
+            android:hint="@string/DNIHint"
+            android:textSize="14sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -106,16 +107,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mail"
-            android:textSize="18dp"/>
+            android:text="@string/email"
+            android:textSize="18sp"/>
 
         <EditText
-            android:id="@+id/etxtMail"
+            android:id="@+id/signup_etxt_email"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Email"
-            android:textSize="14dp" />
+            android:hint="@string/emailHint"
+            android:textSize="14sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -128,16 +129,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Usuario"
-            android:textSize="18dp"/>
+            android:text="@string/password"
+            android:textSize="18sp"/>
 
         <EditText
-            android:id="@+id/etxtPass"
+            android:id="@+id/signup_etxt_password"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Ingrese usuario aqui"
-            android:textSize="14dp" />
+            android:hint="@string/passwordHint"
+            android:inputType="textPassword"
+            android:textSize="14sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -150,21 +152,23 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Reingrese"
-            android:textSize="18dp"/>
+            android:text="@string/rPassword"
+            android:textSize="18sp"/>
 
         <EditText
-            android:id="@+id/etxtRPass"
+            android:id="@+id/signup_etxt_rpassword"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Reingrese la Clave"
-            android:textSize="14dp" />
+            android:hint="@string/rPasswordHint"
+            android:inputType="textPassword"
+            android:textSize="14sp" />
     </LinearLayout>
     <Button
+        android:id="@+id/signup_btn_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Registrarme"/>
+        android:text="@string/signup"/>
 
 </LinearLayout>

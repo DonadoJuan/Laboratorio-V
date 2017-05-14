@@ -12,4 +12,20 @@
     <string name="mainImgDesc">Buffet-UTN\'s logo</string>
     <string name="rememberme">Save \n info</string>
     <string name="emptyFormError">Empty field!</string>
-    </resources>
+    <string name="emailFormError">Not a valid email!</string>
+    <string name="passwordMatchFormError">passwords do not match!</string>
+    <string name="signupTitle2"> User\'s Sign up</string>
+    <string name="DNI"> DNI </string>
+    <string name="DNIHint">enter DNI here</string>
+    <string name="rPassword"> reenter password</string>
+    <string name="rPasswordHint"> reenter password here</string>
+    <string name="signupSecTitle"> This is the sign up screen</string>
+    <string name="sigunupThTitle"> Please, enter valid info</string>
+    <string name="name"> Name</string>
+    <string name="nameHint">enter name here</string>
+    <string name="lastName"> Last name</string>
+    <string name="lastNameHint">Enter last name here</string>
+    <string name="username"> Username</string>
+    <string name="usernameHint"> enter username here</string>
+    <string name="loginAccessError"> email or password do not match</string>
+</resources>

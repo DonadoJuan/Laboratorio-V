@@ -1,7 +1,9 @@
-package com.example.juan.tplabv;
+package com.example.juan.tplabv.mainActivity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.juan.tplabv.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -9,9 +11,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //MainModel mm = new MainModel();
 
+        MainModel mm = new MainModel();
         MainView mv = new MainView(this);
-        MainController mc = new MainController(mv);
+        MainController mc = new MainController(mv,mm);
     }
 }
