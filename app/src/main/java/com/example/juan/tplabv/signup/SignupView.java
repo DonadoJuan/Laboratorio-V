@@ -1,4 +1,4 @@
-package com.example.juan.tplabv.signupActivity;
+package com.example.juan.tplabv.signup;
 
 
 import android.app.Activity;
@@ -6,9 +6,9 @@ import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import com.example.juan.tplabv.R;
-import com.example.juan.tplabv.mainActivity.IMainController;
-import com.example.juan.tplabv.util.FormValidator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,6 +78,16 @@ public class SignupView implements ISignupView {
         for (EditText input : editTextList) {
             input.setError(null);
         }
+    }
+
+    @Override
+    public void showUserAlreadyExistsError(){
+        Toast.makeText(con, con.getString(R.string.userAlreadyExistsError), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public Context getContext(){
+        return con;
     }
 
 }

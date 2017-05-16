@@ -1,4 +1,4 @@
-package com.example.juan.tplabv.signupActivity;
+package com.example.juan.tplabv.signup;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

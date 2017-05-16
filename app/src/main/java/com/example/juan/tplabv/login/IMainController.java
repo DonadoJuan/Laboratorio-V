@@ -1,7 +1,6 @@
-package com.example.juan.tplabv.mainActivity;
+package com.example.juan.tplabv.login;
 
 
-import android.content.Context;
 import android.widget.EditText;
 
 public interface IMainController {

@@ -1,19 +1,15 @@
-package com.example.juan.tplabv.mainActivity;
+package com.example.juan.tplabv.login;
 
 import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.juan.tplabv.R;
-import com.example.juan.tplabv.util.FormValidator;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainView implements IMainView{
 
@@ -21,7 +17,7 @@ public class MainView implements IMainView{
     private EditText password;
     private Button login;
     private Button signup;
-    private ImageView mainImg;
+    private CheckBox remindme;
     private IMainController IMainCon;
     private Context con;
 
@@ -31,6 +27,7 @@ public class MainView implements IMainView{
         password = (EditText) act.findViewById(R.id.main_etxt_password);
         login = (Button) act.findViewById(R.id.main_btn_login);
         signup = (Button) act.findViewById(R.id.main_btn_signup);
+        remindme = (CheckBox) act.findViewById(R.id.main_cbox_remind);
         login.setOnClickListener(loginListener);
         signup.setOnClickListener(signupListener);
     }
@@ -83,8 +80,13 @@ public class MainView implements IMainView{
     }
 
     @Override
-    public void showErrorToast(){
+    public void showLoginMatchError(){
         Toast.makeText(con, con.getString(R.string.loginAccessError), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public boolean isRemindMeChecked(){
+        return remindme.isChecked();
     }
 
 

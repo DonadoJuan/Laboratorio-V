@@ -1,9 +1,10 @@
-package com.example.juan.tplabv.signupActivity;
+package com.example.juan.tplabv.signup;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.content.Intent;
 import android.widget.EditText;
 
+import com.example.juan.tplabv.dao.BuffetUser;
+import com.example.juan.tplabv.login.MainActivity;
 import com.example.juan.tplabv.util.FormValidator;
 
 import java.util.List;
@@ -24,12 +25,12 @@ public class SignupController implements ISignupController{
 
         if(validateSignup(signupEt)){
 
-            SignupForm sf = generateForm(signupEt);
+            BuffetUser sf = generateForm(signupEt);
 
             if(sm.trySignup(sf)){
-                //mv.getContext().startActivity(new Intent(mv.getContext(), MenuActivity.class))
+                sv.getContext().startActivity(new Intent(sv.getContext(), MainActivity.class));
             }else{
-                //error at model
+                sv.showUserAlreadyExistsError();
             }
 
         }
@@ -60,8 +61,8 @@ public class SignupController implements ISignupController{
 
     }
 
-    private SignupForm generateForm(List<EditText> listEt){
-        SignupForm sf = new SignupForm();
+    private BuffetUser generateForm(List<EditText> listEt){
+        BuffetUser sf = new BuffetUser();
         sf.setNombre(listEt.get(0).getText().toString());
         sf.setApellido(listEt.get(1).getText().toString());
         sf.setDni(listEt.get(2).getText().toString());

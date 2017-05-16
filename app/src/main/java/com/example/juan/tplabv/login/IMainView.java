@@ -1,4 +1,4 @@
-package com.example.juan.tplabv.mainActivity;
+package com.example.juan.tplabv.login;
 
 import android.content.Context;
 
@@ -8,7 +8,8 @@ public interface IMainView {
     void setEmptyPasswordError(boolean bo);
     void setEmptyEmailError(boolean bo);
     void setInvalidEmailError(boolean bo);
-    void showErrorToast();
+    void showLoginMatchError();
+    boolean isRemindMeChecked();
     Context getContext();
 
 }

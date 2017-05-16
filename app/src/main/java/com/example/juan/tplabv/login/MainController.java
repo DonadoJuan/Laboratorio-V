@@ -1,15 +1,12 @@
-package com.example.juan.tplabv.mainActivity;
+package com.example.juan.tplabv.login;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
-import android.util.Log;
-import android.view.Choreographer;
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.content.SharedPreferences;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.example.juan.tplabv.signupActivity.SignupActivity;
+import com.example.juan.tplabv.menu.BuffetMenuActivity;
+import com.example.juan.tplabv.signup.SignupActivity;
 import com.example.juan.tplabv.util.FormValidator;
 
 public class MainController implements IMainController{
@@ -26,12 +23,17 @@ public class MainController implements IMainController{
     @Override
     public void doLogin(EditText email, EditText password){
 
-        if(validateLogin(email,password)){
+        if(validateLoginFormat(email,password)){
             if(mm.tryAccess(email.getText().toString(), password.getText().toString())){
-                //mv.getContext().startActivity(new Intent(mv.getContext(), MenuActivity.class));
+
+                if(mv.isRemindMeChecked()){
+                    mm.saveLogin(mv.getContext());
+                }
+
+                mv.getContext().startActivity(new Intent(mv.getContext(), BuffetMenuActivity.class));
             }
             else{
-               // mv.showErrorToast();
+                mv.showLoginMatchError();
             }
         }
     }
@@ -41,7 +43,7 @@ public class MainController implements IMainController{
             mv.getContext().startActivity(new Intent(mv.getContext(), SignupActivity.class));
     }
 
-    private boolean validateLogin(EditText email, EditText password){
+    private boolean validateLoginFormat(EditText email, EditText password){
 
         mv.setEmptyPasswordError(false);
         mv.setInvalidEmailError(false);

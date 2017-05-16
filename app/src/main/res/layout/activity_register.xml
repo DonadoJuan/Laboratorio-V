@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.juan.tplabv.signupActivity.SignupActivity"
+    tools:context="com.example.juan.tplabv.signup.SignupActivity"
     android:background="#fde6ff">
 
 
@@ -94,7 +94,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:hint="@string/DNIHint"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:inputType="number"/>
     </LinearLayout>
 
     <LinearLayout

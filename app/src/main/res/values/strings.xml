@@ -28,4 +28,12 @@
     <string name="username"> Username</string>
     <string name="usernameHint"> enter username here</string>
     <string name="loginAccessError"> email or password do not match</string>
+    <string name="userAlreadyExistsError"> email or DNI already taken</string>
+    <string name="buffetMenuTitle"> Make your order</string>
+    <string name="myResume"> My resume</string>
+    <string name="estimatedTotal"> estimated total:</string>
+    <string name="selectedItems"> selected items: </string>
+    <string name="mainCourseOption"> main course</string>
+    <string name="snacksOption"> snacks </string>
+    <string name="drinksOption"> drinks </string>
 </resources>
