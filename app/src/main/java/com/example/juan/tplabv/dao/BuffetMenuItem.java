@@ -1,6 +1,8 @@
 package com.example.juan.tplabv.dao;
 
-public class BuffetMenuItem {
+import java.io.Serializable;
+
+public class BuffetMenuItem implements Serializable{
 
     private String name;
     private Double price;

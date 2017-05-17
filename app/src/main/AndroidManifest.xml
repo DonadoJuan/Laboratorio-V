@@ -16,10 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".signup.SignupActivity" />
-        <activity android:name=".menu.BuffetMenuActivity"
-                  android:theme="@style/Base.Theme.AppCompat.Light">
-        </activity>
+        <activity android:name=".signup.SignupActivity"/>
+        <activity
+            android:name=".menu.BuffetMenuActivity"
+            android:theme="@style/Base.Theme.AppCompat.Light"/>
+        <activity
+            android:name=".order.OrderActivity"
+            android:theme="@style/Base.Theme.AppCompat.Light"/>
     </application>
 
 </manifest>

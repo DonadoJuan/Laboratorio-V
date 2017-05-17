@@ -1,41 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="wrap_content"
+    android:orientation="horizontal" android:layout_width="match_parent"
     android:gravity="top"
     android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
     android:id="@+id/buffetmenu_root_id">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"/>
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@mipmap/utnfra_icon"
+        android:layout_marginStart="0dp"/>
 
     <TextView
         android:id="@+id/buffetmenu_item_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre de comida"
-        android:gravity="center"
-        android:layout_marginLeft="5dp"
-        android:textSize="18sp"/>
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_gravity="center"
+        android:text="Nombre"
+        android:textSize="22sp" />
 
-    <TextView
-        android:id="@+id/buffetmenu_item_price"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0.00"
-        android:textSize="20dp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/currencySimbol"
+            android:textSize="22sp"/>
+        <TextView
+            android:id="@+id/buffetmenu_item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="0.00"
+            android:textSize="22sp"/>
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/buffetmenu_item_add"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:text="+"
-        android:textSize="30sp"
-        android:padding="0dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="end"
+        android:layout_marginRight="15dp">
 
+        <Button
+            android:id="@+id/buffetmenu_item_add"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="0dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="+"
+            android:textSize="30sp"/>
+    </LinearLayout>
 
 </LinearLayout>

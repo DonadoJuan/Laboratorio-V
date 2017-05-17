@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences  shpf = getSharedPreferences("User", MODE_PRIVATE);
         if (shpf.contains("rememberme")){
             Intent intent = new Intent(this, BuffetMenuActivity.class);
-            this.startActivity (intent);
+            this.startActivity(intent);
             this.finish();
         }
         setContentView(R.layout.activity_main);

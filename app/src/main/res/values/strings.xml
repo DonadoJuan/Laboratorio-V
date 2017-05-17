@@ -30,10 +30,19 @@
     <string name="loginAccessError"> email or password do not match</string>
     <string name="userAlreadyExistsError"> email or DNI already taken</string>
     <string name="buffetMenuTitle"> Make your order</string>
-    <string name="myResume"> My resume</string>
+    <string name="myResume"> My order</string>
     <string name="estimatedTotal"> estimated total:</string>
     <string name="selectedItems"> selected items: </string>
     <string name="mainCourseOption"> main course</string>
     <string name="snacksOption"> snacks </string>
     <string name="drinksOption"> drinks </string>
+    <string name="confirmOrder"> Confirm order </string>
+    <string name="currencySimbol"> $ </string>
+    <string name="noItemSelectedError">Select at least one product before going to your order detail </string>
+    <string name="confirmOrderSuccess"> Your order has been send</string>
+    <string name="selectedItemBody"> Item/s selected: </string>
+    <string name="totalPriceBody"> Order Total: </string>
+    <string name="logoutBar"> Log out </string>
+    <string name="alertOk"> Awesome! </string>
+    <string name="confirmOrderError"> Error Empty cart </string>
 </resources>

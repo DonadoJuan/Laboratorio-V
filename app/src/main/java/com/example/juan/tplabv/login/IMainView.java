@@ -10,6 +10,7 @@ public interface IMainView {
     void setInvalidEmailError(boolean bo);
     void showLoginMatchError();
     boolean isRemindMeChecked();
+    void finishMainActivity();
     Context getContext();
 
 }

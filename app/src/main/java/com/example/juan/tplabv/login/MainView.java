@@ -19,7 +19,7 @@ public class MainView implements IMainView{
     private Button signup;
     private CheckBox remindme;
     private IMainController IMainCon;
-    private Context con;
+    private Activity con;
 
     public MainView(Activity act){
         con = act;
@@ -48,12 +48,17 @@ public class MainView implements IMainView{
     };
 
     @Override
+    public void finishMainActivity(){
+        con.finish();
+    }
+
+    @Override
     public void setIMainController(IMainController imc) {
         IMainCon = imc;
     }
 
     @Override
-    public Context getContext(){ return con;}
+    public Activity getContext(){ return con;}
 
     @Override
     public void setEmptyEmailError(boolean activate){

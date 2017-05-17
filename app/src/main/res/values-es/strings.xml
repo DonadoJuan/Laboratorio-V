@@ -1,16 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 
     <resources>
-        <string name="app_name">Buffet-UTN</string>
-        <string name="email">Mail</string>
-        <string name="password">Clave</string>
-        <string name="login">Ingresar</string>
-        <string name="signup">Registrarme</string>
-        <string name="signupTitle">Registro de Usuario</string>
-        <string name="welcomeTitle">Bienvenido a la primer aplicación</string>
-        <string name="emailHint">ingrese email aqui</string>
-        <string name="passwordHint">ingrese contraseña aqui</string>
-        <string name="or">O</string>
-    <string name="mainImgDesc">Logo de Buffet-UTN</string>
+    <string name="app_name">Buffet-UTN</string>
+    <string name="email">Email</string>
+    <string name="password">contraseña</string>
+    <string name="login">Ingresar</string>
+    <string name="signup">Registrarse</string>
+    <string name="emailHint">ingrese email</string>
+    <string name="passwordHint">ingrese contraseña</string>
+    <string name="signupTitle">Identifiquese para continuar</string>
+    <string name="welcomeTitle">Bienvenido a la primer app de</string>
+    <string name="or">O</string>
+    <string name="mainImgDesc">Logo de BUFFET-UTN</string>
+    <string name="rememberme">Recordarme</string>
+    <string name="emptyFormError">Campo vacio!</string>
+    <string name="emailFormError">No es un mail valido!</string>
+    <string name="passwordMatchFormError">contreseñas no coinciden!</string>
+    <string name="signupTitle2"> Registro de Usuario</string>
+    <string name="DNI"> DNI </string>
+    <string name="DNIHint">ingrese DNI</string>
+    <string name="rPassword"> reingrese contraseña</string>
+    <string name="rPasswordHint"> reingrese contraseña aqui</string>
+    <string name="signupSecTitle"> Esta es la pantalla de registro</string>
+    <string name="sigunupThTitle"> Porfavor, ingrese datos validos</string>
+    <string name="name"> Nombre</string>
+    <string name="nameHint">ingrese nombre aqui</string>
+    <string name="lastName"> Apellido</string>
+    <string name="lastNameHint">ingrese apellido aqui</string>
+    <string name="loginAccessError"> email o contraseña son erroneas</string>
+    <string name="userAlreadyExistsError"> email o DNI ya registrados</string>
+    <string name="buffetMenuTitle"> Haga su pedido</string>
+    <string name="myResume">Mi pedido</string>
+    <string name="estimatedTotal">Tiempo estimado:</string>
+    <string name="selectedItems">Items seleccionados:</string>
+    <string name="mainCourseOption">Principales</string>
+    <string name="snacksOption">Bocadillos</string>
+    <string name="drinksOption"> Bebidas </string>
+    <string name="confirmOrder">Confirmar pedido</string>
+    <string name="currencySimbol">$</string>
+    <string name="noItemSelectedError">Seleccione al menos un producto antes de continuar</string>
+    <string name="confirmOrderSuccess"> Tu pedido a si enviado</string>
+    <string name="selectedItemBody"> Items seleccionados: </string>
+    <string name="totalPriceBody"> Total Pedido: </string>
+    <string name="logoutBar"> Salir </string>
+    <string name="alertOk"> Genial! </string>
+    <string name="confirmOrderError"> Error\Carrito de compras vacio </string>
     </resources>
 

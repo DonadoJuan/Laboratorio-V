@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.juan.tplabv.R;
 
@@ -26,12 +27,13 @@ public class BuffetMenuView {
 
     public BuffetMenuView(Activity act){
         this.act = act;
-        this.recView = (RecyclerView)act.findViewById(R.id.buffetmenu_menu_list);
-        this.myResume = (Button) act.findViewById(R.id.buffetmenu_my_resume);
-        this.menuTabs = (TabLayout)act.findViewById(R.id.buffetmenu_tabmenu);
-        this.totalSelected = (TextView) act.findViewById(R.id.buffetmenu_total_selected);
-        this.totalPrice = (TextView) act.findViewById(R.id.buffetmenu_total);
+        recView = (RecyclerView)act.findViewById(R.id.buffetmenu_menu_list);
+        myResume = (Button) act.findViewById(R.id.buffetmenu_my_resume);
+        menuTabs = (TabLayout)act.findViewById(R.id.buffetmenu_tabmenu);
+        totalSelected = (TextView) act.findViewById(R.id.buffetmenu_total_selected);
+        totalPrice = (TextView) act.findViewById(R.id.buffetmenu_total);
         menuTabs.addOnTabSelectedListener(tabListener);
+        myResume.setOnClickListener(myResumeListener);
     }
 
     private TabLayout.OnTabSelectedListener tabListener = new TabLayout.OnTabSelectedListener() {
@@ -51,6 +53,10 @@ public class BuffetMenuView {
             bmc.goMyResume(act);
         }
     };
+
+    public void showNoItemSelectedError(){
+        Toast.makeText(act, act.getString(R.string.noItemSelectedError), Toast.LENGTH_SHORT).show();
+    }
 
     public void setBuffetMenuController(BuffetMenuController bmcontroller){
         bmc = bmcontroller;

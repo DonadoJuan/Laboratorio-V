@@ -31,6 +31,7 @@ public class MainController implements IMainController{
                 }
 
                 mv.getContext().startActivity(new Intent(mv.getContext(), BuffetMenuActivity.class));
+                mv.finishMainActivity();
             }
             else{
                 mv.showLoginMatchError();

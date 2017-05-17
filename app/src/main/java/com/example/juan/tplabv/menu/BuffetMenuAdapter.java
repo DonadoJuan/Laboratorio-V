@@ -76,11 +76,13 @@ public class BuffetMenuAdapter extends RecyclerView.Adapter<BuffetMenuAdapter.Bu
         }
 
         private void setViewHolderData(BuffetMenuItem menuItem){
+
             this.menuItem = menuItem;
             title.setText(menuItem.getName());
             price.setText(menuItem.getPrice().toString());
+
             if(selectedMenuItems.contains(menuItem))
-                container.setBackgroundColor(Color.GRAY);
+                container.setBackgroundColor(Color.rgb(252,215,151));
             else
                 container.setBackgroundColor(Color.TRANSPARENT);
         }
@@ -89,7 +91,7 @@ public class BuffetMenuAdapter extends RecyclerView.Adapter<BuffetMenuAdapter.Bu
         public void onClick(View v) {
                 if(!selectedMenuItems.contains(menuItem)){
                     selectedMenuItems.add(menuItem);
-                    container.setBackgroundColor(Color.GRAY);
+                    container.setBackgroundColor(Color.rgb(252,215,151));
                 }else{
                     selectedMenuItems.remove(menuItem);
                     container.setBackgroundColor(Color.TRANSPARENT);
