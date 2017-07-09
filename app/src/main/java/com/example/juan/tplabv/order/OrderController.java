@@ -58,9 +58,15 @@ public class OrderController {
 
     public void doFinishOrder(DialogInterface alertD,Activity act){
         alertD.cancel();
-        Intent i = new Intent(act, BuffetMenuActivity.class);
-        i.putExtra("resetSelectedItem",true);
-        act.startActivity(i);
+        act.setResult(2);
+        act.finish();
+    }
+
+    public void callBuffetMenuWithChangedData(Activity act){
+       Intent i = new Intent(act, BuffetMenuActivity.class);
+       i.putExtra("selectedItemList", (Serializable)orderAdapter.getOrderList());
+        act.setResult(1,i);
+        act.finish();
     }
 
     private void refreshTotalPrice(){

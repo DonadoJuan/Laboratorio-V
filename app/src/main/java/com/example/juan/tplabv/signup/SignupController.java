@@ -65,8 +65,8 @@ public class SignupController implements ISignupController{
         BuffetUser sf = new BuffetUser();
         sf.setNombre(listEt.get(0).getText().toString());
         sf.setApellido(listEt.get(1).getText().toString());
-        sf.setDni(listEt.get(2).getText().toString());
-        sf.setMail(listEt.get(3).getText().toString());
+        sf.setDni(listEt.get(3).getText().toString());
+        sf.setMail(listEt.get(2).getText().toString());
         sf.setPassword(listEt.get(4).getText().toString());
         return sf;
     }

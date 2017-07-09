@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -12,14 +13,17 @@ import com.example.juan.tplabv.login.MainActivity;
 
 public class OrderActivity extends AppCompatActivity {
 
+    private OrderModel om;
+    private OrderView ov;
+    private OrderController oc;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
-
-        OrderModel om = new OrderModel();
-        OrderView ov = new OrderView(this);
-        OrderController oc = new OrderController(ov,om);
+        om = new OrderModel();
+        ov = new OrderView(this);
+        oc = new OrderController(ov,om);
     }
 
     @Override
@@ -37,5 +41,12 @@ public class OrderActivity extends AppCompatActivity {
             startActivity(new Intent(this, MainActivity.class));
         }
         return true;
+    }
+
+    @Override
+    public void onBackPressed(){
+        Log.d("ONBACKPRESSED","++++++++++++++++++++++++++++");
+        oc.callBuffetMenuWithChangedData(this);
+        super.onBackPressed();
     }
 }

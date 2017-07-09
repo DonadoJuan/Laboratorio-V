@@ -1,7 +1,9 @@
 package com.example.juan.tplabv.menu;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Vibrator;
 import android.support.design.widget.TabLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -41,6 +43,13 @@ public class BuffetMenuController {
             rv.setAdapter(bfAdapter);
         }
 
+        public void onOrderActivityFinished(int resultCode,Intent data){
+            if(resultCode == 1)
+                bfAdapter.setSelectedMenuItems((List<BuffetMenuItem>)data.getSerializableExtra("selectedItemList"));
+            else
+                bfAdapter.setSelectedMenuItems();
+        }
+
         private SelectedItemListener onSelectedItemChange = new SelectedItemListener() {
             @Override
             public void OnChange(){
@@ -71,10 +80,11 @@ public class BuffetMenuController {
             List<BuffetMenuItem> selectedItemList = bfAdapter.getSelectedMenuItems();
             if(selectedItemList.size() == 0) {
                 bmv.showNoItemSelectedError();
+                ((Vibrator)act.getSystemService(Context.VIBRATOR_SERVICE)).vibrate(5);
             }else{
-                Intent intent = new Intent(act, OrderActivity.class);
-                intent.putExtra("selectedItemList",(Serializable)selectedItemList);
-                act.startActivity(intent);
+                Intent i = new Intent(act, OrderActivity.class);
+                i.putExtra("selectedItemList",(Serializable)selectedItemList);
+                act.startActivityForResult(i,1);
             }
         }
 }

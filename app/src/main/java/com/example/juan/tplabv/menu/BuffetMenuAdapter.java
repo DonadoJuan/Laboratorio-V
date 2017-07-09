@@ -2,6 +2,7 @@ package com.example.juan.tplabv.menu;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.os.Vibrator;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,6 +51,16 @@ public class BuffetMenuAdapter extends RecyclerView.Adapter<BuffetMenuAdapter.Bu
     public void setBfMenuList(List<BuffetMenuItem> updatedList){
         bfMenuList.clear();
         bfMenuList.addAll(updatedList);
+        notifyDataSetChanged();
+    }
+
+    public void setSelectedMenuItems(List<BuffetMenuItem> updatedList){
+        selectedMenuItems.clear();
+        selectedMenuItems.addAll(updatedList);
+        notifyDataSetChanged();
+    }
+    public void setSelectedMenuItems(){
+        selectedMenuItems.clear();
         notifyDataSetChanged();
     }
 

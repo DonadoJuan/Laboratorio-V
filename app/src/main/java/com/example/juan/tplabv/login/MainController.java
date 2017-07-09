@@ -1,6 +1,7 @@
 package com.example.juan.tplabv.login;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.widget.EditText;
@@ -18,6 +19,17 @@ public class MainController implements IMainController{
         mv = mainView;
         mv.setIMainController(this);
         mm = mainModel;
+        checkAlreadyLogedUser();
+    }
+
+    public void checkAlreadyLogedUser(){
+        Context con = mv.getContext();
+        SharedPreferences  shpf = con.getSharedPreferences("User", Context.MODE_PRIVATE);
+        if (shpf.contains("rememberme")){
+            Intent intent = new Intent(con, BuffetMenuActivity.class);
+            con.startActivity(intent);
+            mv.finishMainActivity();
+        }
     }
 
     @Override

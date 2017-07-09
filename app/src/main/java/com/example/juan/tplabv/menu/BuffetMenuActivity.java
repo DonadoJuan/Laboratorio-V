@@ -11,18 +11,24 @@ import android.view.MenuItem;
 
 import com.example.juan.tplabv.R;
 import com.example.juan.tplabv.dao.BuffetDAO;
+import com.example.juan.tplabv.dao.BuffetMenuItem;
 import com.example.juan.tplabv.login.MainActivity;
+
+import java.util.List;
 
 public class BuffetMenuActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    BuffetMenuModel bmm;
+    BuffetMenuView bmv;
+    BuffetMenuController bmc;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buffet_menu);
-        BuffetMenuModel bmm = new BuffetMenuModel();
-        BuffetMenuView bmv = new BuffetMenuView(this);
-        BuffetMenuController bmc = new BuffetMenuController(bmv,bmm);
+        bmm = new BuffetMenuModel();
+        bmv = new BuffetMenuView(this);
+        bmc = new BuffetMenuController(bmv,bmm);
     }
 
     @Override
@@ -40,5 +46,10 @@ public class BuffetMenuActivity extends AppCompatActivity {
             startActivity(new Intent(this, MainActivity.class));
         }
         return true;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+            bmc.onOrderActivityFinished(resultCode,data);
     }
 }

@@ -15,10 +15,8 @@ public class MainModel implements IMainModel{
 
     @Override
     public boolean tryAccess(String email, String password){
-        if(buffetDAO.isBuffetUser(email,password) != null){
-            return true;
-        }
-        return false;
+        return buffetDAO.isBuffetUser(email,password);
+
     }
 
     @Override
