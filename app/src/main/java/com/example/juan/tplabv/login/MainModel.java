@@ -24,4 +24,11 @@ public class MainModel implements IMainModel{
         editor.putString("rememberme", "ok" );
         editor.apply();
     }
+    @Override
+    public void saveCurrentUser(Context c,String email){
+        SharedPreferences mPreferences = c.getSharedPreferences("User", c.MODE_PRIVATE);
+        SharedPreferences.Editor editor = mPreferences.edit();
+        editor.putString("email",email);
+        editor.apply();
+    }
 }

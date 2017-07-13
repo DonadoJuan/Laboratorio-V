@@ -1,8 +1,10 @@
 package com.example.juan.tplabv.dao;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.example.juan.tplabv.menu.BuffetMenuActivity;
 import com.example.juan.tplabv.util.BuffetUtil;
 
 import org.json.JSONArray;
@@ -19,6 +21,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.Buffer;
 import java.util.ArrayList;
+import java.util.List;
 
 public class BuffetDAO{
 
@@ -74,6 +77,25 @@ public class BuffetDAO{
         }
     }
 
+    public static boolean sendOrder(List<BuffetMenuItem> bmList,String user){
+
+        try{
+            String jsonData = BuffetUtil.BuffetMenuListToJSON(bmList,user).toString();
+            String[] taskParams = {API_BASE_ADRESS + "/pedidos/nuevo","POST",jsonData};
+            String msj = (String) new APITask().execute(taskParams).get();
+
+            if(msj.equals("Se inserto correctamente"))
+                return true;
+            else
+                throw new Exception("No hay mensaje positivo");
+
+        }catch (Exception e) {
+            Log.d("ERR INSERTANDO USUARIO", e.getMessage());
+            return false;
+        }
+
+    }
+
 
     //Nested class
 
@@ -81,6 +103,7 @@ public class BuffetDAO{
 
         @Override
         protected void onPreExecute(){
+            //ProgressDialog asyncDialog = new ProgressDialog();
             super.onPreExecute();
         }
 

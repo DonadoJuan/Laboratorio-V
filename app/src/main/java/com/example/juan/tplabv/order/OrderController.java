@@ -57,6 +57,7 @@ public class OrderController {
     };
 
     public void doFinishOrder(DialogInterface alertD,Activity act){
+        om.sendOrder(orderAdapter.getOrderList(),act);
         alertD.cancel();
         act.setResult(2);
         act.finish();

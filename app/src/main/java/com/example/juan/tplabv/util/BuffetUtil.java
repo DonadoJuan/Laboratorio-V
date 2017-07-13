@@ -71,4 +71,32 @@ public class BuffetUtil {
 
         return parsedBuffetMenuList;
     }
+
+    public static JSONObject BuffetMenuListToJSON(List<BuffetMenuItem> buffetMenuList,String user) throws JSONException{
+
+        JSONObject parsedOrder = new JSONObject();
+        JSONArray parsedBuffetMenuList = new JSONArray();
+        parsedOrder.put("usuario",user);
+
+        for (BuffetMenuItem bmi: buffetMenuList) {
+
+            JSONObject orderItem = new JSONObject();
+            orderItem.put("nombre",bmi.getName());
+            orderItem.put("precio",bmi.getPrice());
+            orderItem.put("imagen",bmi.getImgUrl());
+
+            switch (bmi.getBfiType()){
+                case MAINCOURSE: orderItem.put("tipoMenu","principal");
+                    break;
+                case SNACK: orderItem.put("tipoMenu","Snack");
+                    break;
+                case DRINK: orderItem.put("tipoMenu","Bebida");
+                    break;
+            }
+            parsedBuffetMenuList.put(orderItem);
+        }
+        parsedOrder.put("pedido",parsedBuffetMenuList);
+        return parsedOrder;
+
+    }
 }

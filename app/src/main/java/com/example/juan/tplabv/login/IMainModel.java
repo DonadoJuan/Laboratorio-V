@@ -6,4 +6,5 @@ public interface IMainModel {
 
     boolean tryAccess(String email,String password);
     void saveLogin(Context con);
+    void saveCurrentUser(Context c,String email);
 }

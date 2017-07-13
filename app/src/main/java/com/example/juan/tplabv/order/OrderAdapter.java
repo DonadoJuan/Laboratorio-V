@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.media.Image;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -65,7 +66,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderHolder>
         private TextView price;
         private ImageView imgView;
         private View container;
-        private Button remove;
+        private FloatingActionButton remove;
 
         public OrderHolder(View itemView) {
             super(itemView);
@@ -74,11 +75,10 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderHolder>
             price = (TextView)itemView.findViewById(R.id.buffetmenu_item_price);
             imgView = (ImageView) itemView.findViewById(R.id.buffetmenu_item_img);
             container = itemView.findViewById(R.id.buffetmenu_root_id);
-            remove = (Button) container.findViewById(R.id.buffetmenu_item_add);
+            remove = (FloatingActionButton) itemView.findViewById(R.id.buffetmenu_item_add);
             remove.setOnClickListener(this);
-            remove.setText("X");
-            remove.setBackgroundColor(Color.RED);
-            remove.setTextColor(Color.WHITE);
+            remove.setImageResource(R.drawable.ic_action_name);
+            remove.setBackgroundTintList(ColorStateList.valueOf(Color.RED));
         }
 
         public void setViewHolderData(BuffetMenuItem menuItem){

@@ -37,7 +37,7 @@ public class MainController implements IMainController{
 
         if(validateLoginFormat(email,password)){
             if(mm.tryAccess(email.getText().toString(), password.getText().toString())){
-
+                mm.saveCurrentUser(mv.getContext(),email.getText().toString());
                 if(mv.isRemindMeChecked()){
                     mm.saveLogin(mv.getContext());
                 }
