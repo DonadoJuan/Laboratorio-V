@@ -7,6 +7,7 @@
     android:id="@+id/buffetmenu_root_id">
 
     <ImageView
+        android:id="@+id/buffetmenu_item_img"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@mipmap/utnfra_icon"
@@ -20,7 +21,7 @@
         android:layout_marginStart="10dp"
         android:layout_gravity="center"
         android:text="Nombre"
-        android:textSize="22sp" />
+        android:textSize="15sp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -31,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:text="@string/currencySimbol"
-            android:textSize="22sp"/>
+            android:textSize="15sp"/>
         <TextView
             android:id="@+id/buffetmenu_item_price"
             android:layout_width="wrap_content"
@@ -39,7 +40,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:text="0.00"
-            android:textSize="22sp"/>
+            android:textSize="15sp"/>
     </LinearLayout>
 
     <LinearLayout

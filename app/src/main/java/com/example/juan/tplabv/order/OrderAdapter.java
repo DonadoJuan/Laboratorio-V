@@ -3,12 +3,14 @@ package com.example.juan.tplabv.order;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.juan.tplabv.R;
@@ -40,8 +42,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderHolder>
     @Override
     public void onBindViewHolder(OrderHolder holder, int position) {
         BuffetMenuItem item = orderList.get(position);
-        holder.title.setText(item.getName());
-        holder.price.setText(item.getPrice().toString());
+        holder.setViewHolderData(item);
     }
 
     @Override
@@ -62,6 +63,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderHolder>
 
         private TextView title;
         private TextView price;
+        private ImageView imgView;
         private View container;
         private Button remove;
 
@@ -70,12 +72,19 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderHolder>
 
             title = (TextView)itemView.findViewById(R.id.buffetmenu_item_title);
             price = (TextView)itemView.findViewById(R.id.buffetmenu_item_price);
+            imgView = (ImageView) itemView.findViewById(R.id.buffetmenu_item_img);
             container = itemView.findViewById(R.id.buffetmenu_root_id);
             remove = (Button) container.findViewById(R.id.buffetmenu_item_add);
             remove.setOnClickListener(this);
             remove.setText("X");
             remove.setBackgroundColor(Color.RED);
             remove.setTextColor(Color.WHITE);
+        }
+
+        public void setViewHolderData(BuffetMenuItem menuItem){
+            title.setText(menuItem.getName());
+            price.setText(menuItem.getPrice().toString());
+            imgView.setImageBitmap(menuItem.getImgBitmap());
         }
 
         @Override

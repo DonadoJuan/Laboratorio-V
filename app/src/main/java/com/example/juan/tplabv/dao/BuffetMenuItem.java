@@ -1,5 +1,7 @@
 package com.example.juan.tplabv.dao;
 
+import android.graphics.Bitmap;
+
 import java.io.Serializable;
 
 public class BuffetMenuItem implements Serializable{
@@ -7,11 +9,15 @@ public class BuffetMenuItem implements Serializable{
     private String name;
     private Double price;
     private BuffetMenuItemType bfiType;
+    private String imgUrl;
+    private Bitmap imgBitmap;
 
-    public BuffetMenuItem(String name, Double price, BuffetMenuItemType bfiType) {
+    public BuffetMenuItem(String name, Double price, BuffetMenuItemType bfiType, String imgUrl) {
         this.name = name;
         this.price = price;
         this.bfiType = bfiType;
+        this.imgUrl = imgUrl;
+        this.imgBitmap = null;
     }
 
     public String getName() {
@@ -30,13 +36,21 @@ public class BuffetMenuItem implements Serializable{
         this.price = price;
     }
 
-    public void getBfiType(BuffetMenuItemType bfiType){
+    public void setBfiType(BuffetMenuItemType bfiType){
         this.bfiType = bfiType;
     }
 
     public BuffetMenuItemType getBfiType(){
         return bfiType;
     }
+
+    public void setImgUrl(String imgUrl){ this.imgUrl = imgUrl;}
+
+    public String getImgUrl(){ return imgUrl;}
+
+    public void setImgBitmap(Bitmap imgBitmap){ this.imgBitmap = imgBitmap; }
+
+    public Bitmap getImgBitmap(){ return imgBitmap;}
 
     @Override
     public boolean equals(Object o) {

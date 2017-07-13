@@ -45,7 +45,6 @@ public class OrderActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        Log.d("ONBACKPRESSED","++++++++++++++++++++++++++++");
         oc.callBuffetMenuWithChangedData(this);
         super.onBackPressed();
     }

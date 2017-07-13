@@ -7,10 +7,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.juan.tplabv.R;
 import com.example.juan.tplabv.dao.BuffetMenuItem;
+import com.example.juan.tplabv.dao.DownloadImageTask;
+import com.example.juan.tplabv.util.BuffetUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,15 +21,15 @@ import java.util.List;
 public class BuffetMenuAdapter extends RecyclerView.Adapter<BuffetMenuAdapter.BuffetMenuHolder> {
 
     private List<BuffetMenuItem> bfMenuList;
-    private List<BuffetMenuItem> selectedMenuItems;
     private LayoutInflater inflater;
     private SelectedItemListener listener;
+    private List<BuffetMenuItem> selectedItemList;
 
     public BuffetMenuAdapter(List<BuffetMenuItem> bfMenuList, Context c){
         inflater = LayoutInflater.from(c);
         this.bfMenuList = new ArrayList<>();
         this.bfMenuList.addAll(bfMenuList);
-        this.selectedMenuItems = new ArrayList<>();
+        this.selectedItemList = new ArrayList<>();
     }
 
     @Override
@@ -55,16 +58,16 @@ public class BuffetMenuAdapter extends RecyclerView.Adapter<BuffetMenuAdapter.Bu
     }
 
     public void setSelectedMenuItems(List<BuffetMenuItem> updatedList){
-        selectedMenuItems.clear();
-        selectedMenuItems.addAll(updatedList);
+        selectedItemList.clear();
+        selectedItemList.addAll(updatedList);
         notifyDataSetChanged();
     }
-    public void setSelectedMenuItems(){
-        selectedMenuItems.clear();
+    public void clearSelectedMenuItems(){
+        selectedItemList.clear();
         notifyDataSetChanged();
     }
 
-    public List<BuffetMenuItem> getSelectedMenuItems(){ return selectedMenuItems;}
+    public List<BuffetMenuItem> getSelectedMenuItems(){ return selectedItemList;}
 
     public void setSelectedItemListener(SelectedItemListener sil){ listener = sil;}
 
@@ -74,14 +77,15 @@ public class BuffetMenuAdapter extends RecyclerView.Adapter<BuffetMenuAdapter.Bu
 
         private TextView title;
         private TextView price;
-        private BuffetMenuItem menuItem;
+        private ImageView imgView;
         private View container;
+        private BuffetMenuItem menuItem;
 
         public BuffetMenuHolder(View itemView) {
             super(itemView);
-
             title = (TextView)itemView.findViewById(R.id.buffetmenu_item_title);
             price = (TextView)itemView.findViewById(R.id.buffetmenu_item_price);
+            imgView = (ImageView) itemView.findViewById(R.id.buffetmenu_item_img);
             container = itemView.findViewById(R.id.buffetmenu_root_id);
             container.findViewById(R.id.buffetmenu_item_add).setOnClickListener(this);
         }
@@ -91,8 +95,14 @@ public class BuffetMenuAdapter extends RecyclerView.Adapter<BuffetMenuAdapter.Bu
             this.menuItem = menuItem;
             title.setText(menuItem.getName());
             price.setText(menuItem.getPrice().toString());
+            imgView.setImageBitmap(null);
 
-            if(selectedMenuItems.contains(menuItem))
+            if(menuItem.getImgBitmap() == null)
+                new DownloadImageTask(menuItem,imgView).execute();
+            else
+                imgView.setImageBitmap(menuItem.getImgBitmap());
+
+            if(selectedItemList.contains(menuItem))
                 container.setBackgroundColor(Color.rgb(252,215,151));
             else
                 container.setBackgroundColor(Color.TRANSPARENT);
@@ -100,11 +110,11 @@ public class BuffetMenuAdapter extends RecyclerView.Adapter<BuffetMenuAdapter.Bu
 
         @Override
         public void onClick(View v) {
-                if(!selectedMenuItems.contains(menuItem)){
-                    selectedMenuItems.add(menuItem);
+                if(!selectedItemList.contains(menuItem)){
+                    selectedItemList.add(menuItem);
                     container.setBackgroundColor(Color.rgb(252,215,151));
                 }else{
-                    selectedMenuItems.remove(menuItem);
+                    selectedItemList.remove(menuItem);
                     container.setBackgroundColor(Color.TRANSPARENT);
                 }
                 listener.OnChange();

@@ -45,9 +45,9 @@ public class BuffetMenuController {
 
         public void onOrderActivityFinished(int resultCode,Intent data){
             if(resultCode == 1)
-                bfAdapter.setSelectedMenuItems((List<BuffetMenuItem>)data.getSerializableExtra("selectedItemList"));
+                bfAdapter.setSelectedMenuItems(BuffetUtil.getSharedSelectedItemList());
             else
-                bfAdapter.setSelectedMenuItems();
+                bfAdapter.clearSelectedMenuItems();
         }
 
         private SelectedItemListener onSelectedItemChange = new SelectedItemListener() {
@@ -78,12 +78,12 @@ public class BuffetMenuController {
 
         public void goMyResume(Activity act){
             List<BuffetMenuItem> selectedItemList = bfAdapter.getSelectedMenuItems();
-            if(selectedItemList.size() == 0) {
+            if(selectedItemList.isEmpty()) {
                 bmv.showNoItemSelectedError();
                 ((Vibrator)act.getSystemService(Context.VIBRATOR_SERVICE)).vibrate(5);
             }else{
+                BuffetUtil.setSharedSelectedItemList(bfAdapter.getSelectedMenuItems());
                 Intent i = new Intent(act, OrderActivity.class);
-                i.putExtra("selectedItemList",(Serializable)selectedItemList);
                 act.startActivityForResult(i,1);
             }
         }

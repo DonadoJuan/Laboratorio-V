@@ -33,7 +33,7 @@ public class OrderController {
     public void initRecyclerView(RecyclerView rv, Activity act){
 
         rv.setLayoutManager(new LinearLayoutManager(act));
-        orderAdapter = new OrderAdapter(getObjectOnIntent(act),act);
+        orderAdapter = new OrderAdapter(BuffetUtil.getSharedSelectedItemList(),act);
         orderAdapter.setRemoveItemListener(removeItemListener);
         rv.setAdapter(orderAdapter);
         refreshTotalPrice();
@@ -64,7 +64,7 @@ public class OrderController {
 
     public void callBuffetMenuWithChangedData(Activity act){
        Intent i = new Intent(act, BuffetMenuActivity.class);
-       i.putExtra("selectedItemList", (Serializable)orderAdapter.getOrderList());
+       BuffetUtil.setSharedSelectedItemList(orderAdapter.getOrderList());
         act.setResult(1,i);
         act.finish();
     }
@@ -74,10 +74,4 @@ public class OrderController {
         ov.getTotalPrice().setText(String.valueOf(dTotal));
     }
 
-    private List<BuffetMenuItem> getObjectOnIntent(Activity act){
-        Intent i = act.getIntent();
-        List<BuffetMenuItem> orderList = null;
-        orderList = (List<BuffetMenuItem>) i.getSerializableExtra("selectedItemList");
-        return orderList;
-    }
 }

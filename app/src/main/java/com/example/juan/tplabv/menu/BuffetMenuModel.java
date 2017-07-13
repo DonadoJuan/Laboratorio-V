@@ -11,21 +11,17 @@ import java.util.List;
 
 public class BuffetMenuModel {
 
-    private BuffetDAO bfdao;
-    private List<BuffetMenuItem> buffetMenuItemList;
-
     public BuffetMenuModel(){
-        bfdao = new BuffetDAO();
-        buffetMenuItemList = bfdao.getBuffetMenuItemList();
+
     }
 
     public List<BuffetMenuItem> getBuffetMenuItemList() {
-        return buffetMenuItemList;
+        return BuffetDAO.getBuffetMenuList();
     }
 
     public List<BuffetMenuItem> getBuffetMenuItemList(BuffetMenuItemType type){
         List<BuffetMenuItem> filteredList = new ArrayList<>();
-        for (BuffetMenuItem item : buffetMenuItemList ) {
+        for (BuffetMenuItem item : BuffetDAO.getBuffetMenuList()) {
             if(item.getBfiType() == type)
                 filteredList.add(item);
         }

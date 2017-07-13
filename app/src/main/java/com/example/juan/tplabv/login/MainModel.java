@@ -7,15 +7,13 @@ import com.example.juan.tplabv.dao.BuffetDAO;
 
 public class MainModel implements IMainModel{
 
-    private BuffetDAO buffetDAO;
-
     public MainModel(){
-        buffetDAO = new BuffetDAO();
+
     }
 
     @Override
     public boolean tryAccess(String email, String password){
-        return buffetDAO.isBuffetUser(email,password);
+        return BuffetDAO.isBuffetUser(email,password);
 
     }
 
